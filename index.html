@@ -310,7 +310,8 @@
       
         
           
-            
+            <p>问：<br>hadoop框架怎么来优化<br>答：<br>hdfs优化、mr程序优化、yarn的job调度优化、hbase优化、hive优化等角度回答。<br>1）从应用角度进行优化。由于MR是迭代逐行解析数据文件的，怎样在迭代的情况下，编写高效率的应用程序是一种优化思路。<br>i）避免不必要的reduce任务，如mr中reduce是不必要的，我们可以在map中处理数据，reducer设置为0，这样可以避免多余的reduce任务<br>ii) 为job添加一个Combiner（只有操作满足结合律的才可设置combiner），可以大大减少shuffle阶段从map task 拷贝给远程 reduce task 的数据量。一般而言，combiner与reducer相同</p>
+
           
         
       
